@@ -1,0 +1,93 @@
+/* Base styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Header and Navigation */
+header {
+    background: #2c3e50;
+    color: #ffffff;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+}
+
+header ul {
+    padding: 0;
+    list-style: none;
+}
+
+header li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Area */
+main {
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding-bottom: 60px; /* Space for footer */
+}
+
+/* Blog Post Styles */
+.post {
+    background: #ffffff;
+    margin-bottom: 30px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.post h2 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.post p {
+    white-space: pre-line;
+}
+
+.post-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.date {
+    color: #7f8c8d;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #2c3e50;
+    color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
