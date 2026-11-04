@@ -1,6 +1,14 @@
 // Array holding the blog post data
 const posts = [
     {
+        title: "Post 2: Teamwork",
+        date: "November 3, 2026",
+        content: `Teamwork went well for the lightning presentations. We decided to 
+        split up the work such that each person did one slide and it went well. We determined beforehand our topic
+        and what date we should get it done by. I see myself in team writing tasks working well with my teammates and 
+        communicating to ensure everything goes smoothly.`
+    },
+    {
         title: "Post 1: An Image of Success",
         date: "October 13, 2026",
         content: `(Image of a man with prosthetic leg running towards the camera.)
@@ -29,11 +37,14 @@ posts.forEach(post => {
     date.className = 'date';
     date.textContent = post.date;
 
-    // Create and set the image
-    const image = document.createElement('img');
-    image.src = post.image;
-    image.alt = post.alt;
-    image.className = 'post-image';
+    // Create an image only when the post includes one
+    let image;
+    if (post.image) {
+        image = document.createElement('img');
+        image.src = post.image;
+        image.alt = post.alt || '';
+        image.className = 'post-image';
+    }
 
     // Create and set the content
     const content = document.createElement('p');
@@ -42,7 +53,9 @@ posts.forEach(post => {
     // Append all elements to the article
     article.appendChild(title);
     article.appendChild(date);
-    article.appendChild(image);
+    if (image) {
+        article.appendChild(image);
+    }
     article.appendChild(content);
 
     // Append the article to the main container on the page
