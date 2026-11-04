@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <canvas id="math-background" aria-hidden="true"></canvas>
     <header>
         <h1>Simple Blog - Albert Zhan</h1>
         <nav>
@@ -16,6 +20,22 @@
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
+        <div class="header-actions">
+            <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Toggle dark mode" title="Toggle dark mode">
+                <span class="theme-toggle-track" aria-hidden="true">
+                    <span class="theme-toggle-thumb">
+                        <span class="theme-toggle-sun"></span>
+                        <span class="theme-toggle-moon"></span>
+                    </span>
+                </span>
+            </button>
+            <button class="header-icon-button" type="button" aria-label="Profile" title="Profile">
+                <span class="profile-icon" aria-hidden="true"></span>
+            </button>
+            <button class="header-icon-button" type="button" aria-label="Settings" title="Settings">
+                <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+            </button>
+        </div>
     </header>
 
     <main id="blog-container">
