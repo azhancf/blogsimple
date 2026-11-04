@@ -3,10 +3,7 @@ const posts = [
     {
         title: "Post 2: Teamwork",
         date: "November 3, 2026",
-        content: `Teamwork went well for the lightning presentations. We decided to 
-        split up the work such that each person did one slide and it went well. We determined beforehand our topic
-        and what date we should get it done by. I see myself in team writing tasks working well with my teammates and 
-        communicating to ensure everything goes smoothly.`
+        content: `Teamwork went well for the lightning presentations. We decided to split up the work such that each person did one slide and it went well. We determined beforehand our topic and what date we should get it done by. I see myself in team writing tasks working well with my teammates and communicating to ensure everything goes smoothly.`
     },
     {
         title: "Post 1: An Image of Success",
