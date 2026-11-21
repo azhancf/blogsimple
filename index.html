@@ -46,6 +46,13 @@
         <p>&copy; 2026 My Simple Blog</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        const scriptUrl = new URL('script.js', document.baseURI);
+        scriptUrl.searchParams.set('v', Date.now().toString());
+
+        const script = document.createElement('script');
+        script.src = scriptUrl.href;
+        document.body.appendChild(script);
+    </script>
 </body>
 </html>
