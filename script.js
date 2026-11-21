@@ -3,12 +3,14 @@ const posts = [
     {
         title: "Post 2: Teamwork",
         date: "November 3, 2026",
-        content: `Teamwork went well for the lightning presentations. We decided to split up the work such that each person did one slide and it went well. We determined beforehand our topic and what date we should get it done by. I see myself in team writing tasks working well with my teammates and communicating to ensure everything goes smoothly.`
+        content: String.raw`For the lightning talk, our group looked at Costco's Member Privileges & Conditions page and compared it to their mission and Code of Ethics. Overall, teamwork went well once we got organized, though we ran into a couple of small issues. At first, we were confused about which exact Costco webpage we were supposed to use. Sorting that out showed me how important it is to confirm the exact source before anyone starts working. Once we settled on the right page and set a deadline, we split the presentation so each person took one slide.
+        \n\n I worked on the "Language Analysis" slide and looked at tone, agency, and accessibility. Looking closely at the wording, like how the page starts friendly before shifting to phrases like "without prior notice" and "without cause," gave me plenty to cover. Our other concern as a group was whether everyone had enough to say on their slide to hit the 4 to 6 minute target. Looking at the full ppt, I noticed my points tied closely into the "Values Check" slide, which also brought up the "without notice" and "without cause" rules. That taught me that dividing up slides still requires checking in on what everyone is actually writing, so you don't repeat each other or leave someone short on material.
+        \n\n In future team writing tasks, I see myself as someone who sticks to deadlines and gets my section done reliably. After this presentation, I also want to be better about confirming sources and expectations right at the start so there is no early confusion. Checking in while everyone is still drafting will also help make sure our sections connect instead of just being pasted together at the end.`
     },
     {
         title: "Post 1: An Image of Success",
         date: "October 13, 2026",
-        content: `(Image of a man with prosthetic leg running towards the camera.)
+        content: String.raw`(Image of a man with prosthetic leg running towards the camera.)
         \nI chose this image because technology should be used to help people, such as improving people's health
         and helping people with disabilities.`,
         image: "image.png",
@@ -45,7 +47,12 @@ posts.forEach(post => {
 
     // Create and set the content
     const content = document.createElement('p');
-    content.textContent = post.content;
+    post.content.split('\\n').forEach((line, index) => {
+        if (index > 0) {
+            content.appendChild(document.createElement('br'));
+        }
+        content.appendChild(document.createTextNode(line));
+    });
 
     // Append all elements to the article
     article.appendChild(title);

@@ -258,7 +258,7 @@ main {
 }
 
 .post p {
-    white-space: pre-line;
+    white-space: normal;
 }
 
 .post-image {
