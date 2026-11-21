@@ -1,6 +1,14 @@
 // Array holding the blog post data
 const posts = [
     {
+        title: "Post 3: Resume",
+        date: "November 20, 2026",
+        resume: "Albert_Zhan_Resume_.pdf",
+        content: String.raw`The lesson mentioned that employers generally prefer specialized candidates over generalists, so sending out one generic resume for different fields usually confuses readers. My resume is tailored specifically toward software engineering and computer science roles. Everything on the page, from my Software Engineer Intern role at LynxDI and my technical projects like the C/C++ HTTP Server and UW Campus Map to my Programming Tutor job at Code Wiz, connects directly to coding and technical work.
+        \n\n My resume also applies the grammar, tense, and XYZ style points from the lesson. Since all three of my listed positions ended by August 2026, I used past tense action verbs across every bullet point (such as "Developed," "Engineered," "Analyzed," and "Instructed") without mixing tenses under the same heading. I also skipped full sentences and consistently left periods off the end of every bullet point. To make my experience more concrete, I included measurable results where I could, like noting that my inverted index at LynxDI reduced average AI token usage by up to 10%, that I synthesized over 40 academic papers into a 12 page report for the UW lab, and that I taught over 60 students at Code Wiz.`
+    },
+
+    {
         title: "Post 2: Teamwork",
         date: "November 3, 2026",
         content: String.raw`For the lightning talk, our group looked at Costco's Member Privileges & Conditions page and compared it to their mission and Code of Ethics. Overall, teamwork went well once we got organized, though we ran into a couple of small issues. At first, we were confused about which exact Costco webpage we were supposed to use. Sorting that out showed me how important it is to confirm the exact source before anyone starts working. Once we settled on the right page and set a deadline, we split the presentation so each person took one slide.
@@ -61,6 +69,23 @@ posts.forEach(post => {
         article.appendChild(image);
     }
     article.appendChild(content);
+
+    if (post.resume && new Date().getFullYear() === 2026) {
+        const resumeDetails = document.createElement('details');
+        resumeDetails.className = 'resume-details';
+
+        const resumeSummary = document.createElement('summary');
+        resumeSummary.textContent = 'Resume — click to expand';
+
+        const resumeViewer = document.createElement('iframe');
+        resumeViewer.className = 'resume-viewer';
+        resumeViewer.src = post.resume;
+        resumeViewer.title = 'Resume PDF';
+
+        resumeDetails.appendChild(resumeSummary);
+        resumeDetails.appendChild(resumeViewer);
+        article.appendChild(resumeDetails);
+    }
 
     // Append the article to the main container on the page
     container.appendChild(article);
